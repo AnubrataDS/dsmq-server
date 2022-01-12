@@ -14,11 +14,24 @@ This is not a pub-sub system, each message in queue can be consumed only once.
    - A `channel` is just a named message queue
 2. `POST /send/{channel}`
    - Send a `message` to a `channel`.
-   - See `dsmq.postman_collection.json` for message format
+   - body format :
+     ```
+     {
+        "message" : String
+     }
+     ```
+   - See `dsmq.postman_collection.json` for sample message
 3. `GET /receive/{channel}`
    - Consume first available `message` from a `channel`
+   - response format :
+   - body format :
+     ```
+     {
+        "message" : String
+     }
+     ```
    - If no message is available, returns a blank message
-   - See `dsmq.postman_collection.json` for message format
+   - See `dsmq.postman_collection.json` for sample message
 
 ### Roadmap:
 
