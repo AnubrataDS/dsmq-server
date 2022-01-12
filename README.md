@@ -24,7 +24,6 @@ This is not a pub-sub system, each message in queue can be consumed only once.
 3. `GET /receive/{channel}`
    - Consume first available `message` from a `channel`
    - response format :
-   - body format :
      ```
      {
         "message" : String
