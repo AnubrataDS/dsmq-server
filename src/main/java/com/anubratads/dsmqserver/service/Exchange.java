@@ -9,23 +9,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class Exchange {
 	private Map<String, MessageQueue> channelNameToQueue;
-	private static volatile Exchange instance;
 
 	private Exchange() {
 		this.channelNameToQueue = new ConcurrentHashMap<String, MessageQueue>();
-	}
-
-	public static Exchange getInstance() {
-		Exchange result = instance;
-		if (result != null) {
-			return result;
-		}
-		synchronized (Exchange.class) {
-			if (instance == null) {
-				instance = new Exchange();
-			}
-			return instance;
-		}
 	}
 
 	public void createChannel(String name) {
