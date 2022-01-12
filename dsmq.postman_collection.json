@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "acfbf70a-10cb-4803-8b8a-7da496c25645",
+		"name": "dsmq",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create channel",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/create/{{channel}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"create",
+						"{{channel}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get message from channel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/receive/{{channel}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"receive",
+						"{{channel}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send message to channel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\":\"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/send/{{channel}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"send",
+						"{{channel}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "channel",
+			"value": "test"
+		}
+	]
+}
